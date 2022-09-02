@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vmLogin"
+            type="com.nftmarket.user.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".user.login.LoginActivity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/guideline" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_login"
+                android:textColorHint="@color/white"
+                android:layout_marginTop="10dp"
+                android:id="@+id/textEmail"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Email"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/brown_dark"
+                    android:text="@={vmLogin.email}"
+                    app:error="@{vmLogin.emailError}"
+                    android:drawablePadding="10dp"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/white"
+                android:layout_marginTop="10dp"
+                android:id="@+id/passwordID"
+                android:background="@drawable/background_login"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Password"
+                    android:text="@={vmLogin.password}"
+                    app:error="@{vmLogin.passwordError}"
+                    android:backgroundTint="@color/brown_dark"
+                    android:textColor="@color/white"
+                    android:drawablePadding="10dp"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->vmLogin.openHome()}"
+                android:layout_marginTop="70dp"
+                android:text="sign in "
+                android:textSize="17dp"/>
+            <TextView
+                android:id="@+id/newAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEW ACCOUNT"
+                android:textColor="@color/white"
+                android:textSize="17dp"
+                android:onClick="@{()->vmLogin.createAccount()}"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:padding="20dp"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

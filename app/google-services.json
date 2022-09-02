@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "718103043149",
+    "project_id": "nftmarket-b440d",
+    "storage_bucket": "nftmarket-b440d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718103043149:android:7573f9acd17d64777ed004",
+        "android_client_info": {
+          "package_name": "com.nftmarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718103043149-eef8qoqmmfaqdl2sa70vkvclfl3107dt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nftmarket",
+            "certificate_hash": "21ef65aa330d81819a34c3b99a2e3ea5f6cfc798"
+          }
+        },
+        {
+          "client_id": "718103043149-f6tl2oa9s10tf3hd53174cj9a9gejl49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGuXhViChyiD5ssA9SnLd_fvfbkWb4Rto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718103043149-f6tl2oa9s10tf3hd53174cj9a9gejl49.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

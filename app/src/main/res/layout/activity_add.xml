@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vmAdd"
+            type="com.nftmarket.user.main.ui.home.add.AddViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".user.main.ui.home.add.AddActivity">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Add your NFT"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_action_back"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            />
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintGuide_percent=".15"
+            android:id="@+id/guideline"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_login"
+                android:textColorHint="@color/white"
+                android:layout_marginTop="10dp"
+                android:id="@+id/nftNameID"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="NFT name"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/brown_dark"
+                    android:text="@={vmAdd.nftName}"
+                    app:error="@{vmAdd.nftNameError}"
+                    android:drawablePadding="10dp"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_login"
+                android:textColorHint="@color/white"
+                android:layout_marginTop="10dp"
+                android:id="@+id/descriptionNFT"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Description"
+                    android:lines="5"
+                    android:gravity="top"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/brown_dark"
+                    android:text="@={vmAdd.description}"
+                    app:error="@{vmAdd.descriptionError}"
+                    android:drawablePadding="10dp"
+                     />
+            </com.google.android.material.textfield.TextInputLayout>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_action_image"
+                android:layout_marginTop="10dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/brown"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:text="Add document Proof of ownership"
+                android:layout_marginTop="10dp"/>
+           <Button
+               android:id="@+id/addDocument"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="10dp"
+               android:text="Add file"
+               android:textAllCaps="false"
+               android:drawableRight="@drawable/ic_action_add"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="alsdfkjasd;lfj"
+                android:textSize="15dp"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
